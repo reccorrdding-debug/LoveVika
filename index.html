@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест для любимой</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Аудиофайлы -->
+    <audio id="sound-correct" src="jg-032316-sfx-elearning-correct-answer-sound-1.mp3"></audio>
+    <audio id="sound-wrong" src="0a488e72a56b1a8.mp3"></audio>
+    <audio id="sound-final" src="final-triumph.mp3"></audio> 
+
+    <div class="container" id="quiz-box">
+        <!-- Экран приветствия -->
+        <div id="start-screen">
+            <h1>Привет, моя хорошая! ❤️</h1>
+            <p>Я приготовил для тебя небольшой тест. Давай проверим, как хорошо ты помнишь нашу историю?</p>
+            <button class="btn" onclick="startQuiz()">Нажми на кнопку тест</button>
+        </div>
+
+        <!-- Экран вопросов -->
+        <div id="question-screen" class="hidden">
+            <h1 id="question-title">Вопрос</h1>
+            <div class="options-container" id="options-box"></div>
+        </div>
+
+        <!-- Экран финала -->
+        <div id="final-screen" class="hidden">
+            <div class="love-text">Я ТЕБЯ ЛЮБЛЮ КИСЯ! 💖</div>
+            <div class="heart-matrix" id="heart-matrix"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+:root {
+    --bg-color: #fff0f5;
+    --card-bg: #ffffff;
+    --primary-color: #ff69b4;
+    --text-color: #4a4a4a;
+    --correct-color: #2ecc71;
+    --wrong-color: #e74c3c;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.2);
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+h1 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 18px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    background-color: #ff4da6;
+}
+
+.options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.option-btn {
+    background-color: #fff5f8;
+    border: 2px solid #ffe4e1;
+    color: var(--text-color);
+    padding: 14px;
+    font-size: 16px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.option-btn:hover:not(:disabled) {
+    background-color: #ffe4e1;
+    border-color: var(--primary-color);
+}
+
+.option-btn.correct {
+    background-color: var(--correct-color) !important;
+    border-color: var(--correct-color) !important;
+    color: white;
+}
+
+.option-btn.wrong {
+    background-color: var(--wrong-color) !important;
+    border-color: var(--wrong-color) !important;
+    color: white;
+    opacity: 0.6;
+    transform: scale(0.95);
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Эффекты финала */
+.love-text {
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--primary-color);
+    animation: blink 1s infinite alternate;
+    margin-bottom: 20px;
+}
+
+@keyframes blink {
+    0% { opacity: 0.3; transform: scale(0.98); }
+    100% { opacity: 1; transform: scale(1.05); }
+}
+
+.heart-matrix {
+    display: inline-grid;
+    grid-template-columns: repeat(9, 15px);
+    grid-template-rows: repeat(8, 15px);
+    gap: 2px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.heart-dot {
+    color: #ff3366;
+    font-size: 14px;
+    line-height: 15px;
+    animation: pulse 1.5s infinite ease-in-out;
+    opacity: 0;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(0.8); }
+    50% { transform: scale(1.2); }
+}
